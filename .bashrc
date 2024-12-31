@@ -294,6 +294,7 @@ function conf {
   rsync -avz -R ~/./.gitconfig ~/Library/Code/conf/
   rsync -avz -R ~/./.ssh ~/Library/Code/conf/
   cd ~/Library/Code/conf
+  git pull
   git add .
   git cm "`date`"
   git push
