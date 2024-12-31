@@ -1,2 +1,0 @@
-# conf
-Personal configuration files
