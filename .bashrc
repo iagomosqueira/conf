@@ -293,6 +293,8 @@ function conf {
   rsync -avz -R ~/./.pandoc-completion.bash ~/Library/Code/conf/
   rsync -avz -R ~/./.gitconfig ~/Library/Code/conf/
   rsync -avz -R ~/./.ssh ~/Library/Code/conf/
+  rsync -avz -R ~/./.config/nemo ~/Library/Code/conf/
+
   cd ~/Library/Code/conf
   git pull
   git add .
