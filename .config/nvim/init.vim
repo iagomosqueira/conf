@@ -13,6 +13,7 @@ call plug#begin()
 
 " Basic
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 
 " obsidian & markdown
 Plug 'nvim-lua/plenary.nvim'
@@ -43,6 +44,7 @@ Plug 'jalvesaq/southernlights'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Make
 Plug 'neomake/neomake'
