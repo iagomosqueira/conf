@@ -11,18 +11,40 @@ let maplocalleader="\<Space>"
 
 call plug#begin()
 
-" List your plugins here
+" Basic
 Plug 'tpope/vim-sensible'
+
+" obsidian & markdown
+Plug 'nvim-lua/plenary.nvim'
+Plug 'epwalsh/obsidian.nvim'
+
+" dependencies
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'hrsh7th/cmp-vsnip'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+
+" vsnip
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+" R
 Plug 'R-nvim/cmp-r'
 Plug 'R-nvim/R.nvim'
+
+" Design
 Plug 'jalvesaq/southernlights'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+
+" Make
 Plug 'neomake/neomake'
 
 call plug#end()
@@ -104,8 +126,6 @@ function! CondensedPath() abort
 endfunction
 
 let g:airline_section_c = airline#section#create(['%{CondensedPath()}'])
-
-
 
 " --- MOVEMENT
 
