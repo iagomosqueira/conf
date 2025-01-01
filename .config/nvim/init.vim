@@ -18,6 +18,7 @@ Plug 'tpope/vim-surround'
 " obsidian & markdown
 Plug 'nvim-lua/plenary.nvim'
 Plug 'epwalsh/obsidian.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 " dependencies
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -41,10 +42,12 @@ Plug 'R-nvim/R.nvim'
 
 " Design
 Plug 'jalvesaq/southernlights'
+Plug 'folke/tokyonight.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'junegunn/goyo.vim'
 
 " Make
 Plug 'neomake/neomake'
@@ -162,4 +165,5 @@ set expandtab
 set shiftwidth=2 
 set smarttab
 
+" LSP
 

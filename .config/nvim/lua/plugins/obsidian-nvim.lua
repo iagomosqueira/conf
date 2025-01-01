@@ -4,5 +4,6 @@ require("obsidian").setup{
     name = "notes",
     path = "~/Library/Notes",
   }
-  }
+  },
+  ui={enable=false}
 }
