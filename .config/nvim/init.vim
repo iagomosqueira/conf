@@ -13,13 +13,12 @@ call plug#begin()
 
 " List your plugins here
 Plug 'tpope/vim-sensible'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'R-nvim/R.nvim'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'R-nvim/cmp-r'
+Plug 'R-nvim/R.nvim'
 Plug 'jalvesaq/southernlights'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -61,7 +60,7 @@ set termguicolors
 colorscheme iago
 
 " Mark line 80
-set colorcolumn=80
+set colorcolumn=96
 
 " keep cursor 4 lines from edge
 set scrolloff=4
@@ -86,6 +85,9 @@ set laststatus=2
 " set lines to wrap at nearest space to EOL
 set wrap		
 set linebreak
+
+" title w/ path + filename
+set title titlestring=%-25.55F\ %r%m titlelen=70
 
 " --- STATUS line
 
