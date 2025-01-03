@@ -73,11 +73,11 @@ noremap <C-Up> <C-W>W
 noremap <C-Down> <C-W>w
 
 " R.nvim
-nmap <Enter> <Plug>RDSendLine
-nmap <Space> <Plug>RDSendLine
-nmap <C-Enter> <Plug>RESendMBlock
+"nmap <Enter> <Plug>RDSendLine
+"nmap <Space> <Plug>RDSendLine
+"nmap <C-Enter> <Plug>RESendMBlock
 nmap <LocalLeader>r <Plug>RStart
-vmap <Enter> <Plug>RDSendSelection
+"vmap <Enter> <Plug>RDSendSelection
 
 
 " --- DISPLAY

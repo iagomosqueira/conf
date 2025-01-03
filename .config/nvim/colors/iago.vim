@@ -44,7 +44,7 @@ hi StatusLineNC gui=NONE guifg=lightblue guibg=darkblue
 hi StatusLine gui=bold guifg=cyan guibg=blue
 hi label  guifg=gold2
 hi operator  guifg=orange
-hi Function     guifg=orange
+hi Function  guifg=rred
 hi clear Visual
 hi Visual  term=reverse cterm=reverse gui=reverse
 hi DiffChange   guibg=darkgreen
@@ -82,3 +82,12 @@ hi TodoPriorityW  gui=bold guifg=SlateGray1
 highlight default SpellErrors ctermfg=Red guifg=Red cterm=underline gui=underline term=reverse
 
 highlight clear SignColumn
+
+" gitgutter
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+" current line
+set cursorline
+hi CursorLine  guibg=#222222
