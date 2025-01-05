@@ -28,6 +28,7 @@ hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
 hi Boolean	ctermfg=209	guifg=#ffd7af gui=bold
 hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ff80	guibg=#000000
 hi Folded	ctermfg=86	ctermbg=240	guifg=#00ff80	guibg=#585858
+hi Repeat       ctermfg=192     guifg=#f9ab4a
 
 syn keyword rTodoKeyw BUG FIX NOTE TODO TEST CHECK contained
 
@@ -78,7 +79,6 @@ hi PmenuThumb	ctermbg=243	guibg=#767676
 hi Question	ctermfg=115	guifg=#87d7af
 hi QuickFixLine	ctermfg=231	ctermbg=23	guifg=white	guibg=#005f5f
 hi Quote	guifg=#ffffc0
-hi Repeat       ctermfg=192     guifg=#d7ff87
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi Special	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
