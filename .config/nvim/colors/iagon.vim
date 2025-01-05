@@ -26,6 +26,8 @@ hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#f8961e	cterm=NONE	gui=NONE
 hi Operator	ctermfg=208	guifg=#00d7ff
 hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
 hi Boolean	ctermfg=209	guifg=#ffd7af gui=bold
+hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ff80	guibg=#000000
+hi Folded	ctermfg=86	ctermbg=240	guifg=#00ff80	guibg=#585858
 
 syn keyword rTodoKeyw BUG FIX NOTE TODO TEST CHECK contained
 
@@ -56,8 +58,6 @@ hi Directory	ctermfg=33	guifg=#0087ff
 hi Emphasis	gui=italic
 hi Error	ctermfg=231	cterm=NONE	ctermbg=196	gui=NONE	guifg=White	guibg=Red
 hi Exception	gui=NONE guifg=#eecc00
-hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#000000
-hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi Identifier	ctermfg=86	cterm=NONE	guifg=#5fffd7	gui=NONE
 hi Ignore       ctermfg=242     cterm=NONE      guifg=#6c6c6c   gui=NONE
 hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00

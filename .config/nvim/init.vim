@@ -84,7 +84,7 @@ nmap <LocalLeader>r <Plug>RStart
 
 set termguicolors
 "colorscheme southernlights
-colorscheme iago
+colorscheme iagon
 
 " Mark line 80
 set colorcolumn=96
@@ -102,9 +102,9 @@ let g:loaded_node_provider = 0
 set foldtext=foldtext()
 
 "foldmethod
-set foldmethod=marker
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldmethod=marker
 
 " Add a left margin
 set foldcolumn=2
