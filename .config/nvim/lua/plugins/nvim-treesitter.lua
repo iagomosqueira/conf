@@ -23,19 +23,19 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
 -- latex
 
-parser_config.latex = {
-  install_info = {
-    url = "~/.config/nvim/parsers/tree-sitter-latex",
-    files = {"src/parser.c"},
-    branch = "main",
-    generate_requires_npm = false,
-    requires_generate_from_grammar = false,
-  },
-  filetype = "tex", -- if filetype does not match the parser name
-}
-
-vim.treesitter.language.register('latex', 'tex')
-
+-- parser_config.latex = {
+--   install_info = {
+--     url = "~/.config/nvim/parsers/tree-sitter-latex",
+--     files = {"src/parser.c"},
+--     branch = "main",
+--     generate_requires_npm = false,
+--     requires_generate_from_grammar = false,
+--   },
+--   filetype = "tex", -- if filetype does not match the parser name
+-- }
+-- 
+-- vim.treesitter.language.register('latex', 'tex')
+-- 
 -- stan
 
 parser_config.stan = {

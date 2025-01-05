@@ -5,7 +5,6 @@
 "
 " Based on other color schemes. The starting point was 'southernlights'
 
-
 set background=dark
 
 hi clear
@@ -16,60 +15,69 @@ endif
 
 let colors_name = "iago"
 
-hi Boolean	ctermfg=209	guifg=#ff875f
-hi Character	ctermfg=223	guifg=#ffd7af
-hi Comment	ctermfg=147	guifg=#afafff
-hi Constant	ctermfg=194	guifg=#d7ffd7
-hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=black
-hi Conditional  ctermfg=228     guifg=#ffff87
-hi Repeat       ctermfg=192     guifg=#d7ff87
-hi Label        ctermfg=191     guifg=#d7ff5f
-hi Keyword      ctermfg=193     guifg=#d7ffaf
-hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=Black	guibg=Green	gui=bold
-hi CursorLine	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
-hi CursorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
-hi ColorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
-hi DiffAdd	ctermfg=227	ctermbg=22	guifg=#ffff5f	guibg=#005f00
-hi DiffDelete	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000
-hi DiffChange	ctermfg=227	ctermbg=58	guifg=#ffff5f	guibg=#5f5f00
-hi DiffText	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000	cterm=NONE	gui=NONE
-hi Emphasis	gui=italic
-hi Strong	gui=bold
-hi Exception	gui=NONE guifg=#eecc00
-hi Error	ctermfg=231	cterm=NONE	ctermbg=196	gui=NONE	guifg=White	guibg=Red
-hi Directory	ctermfg=33	guifg=#0087ff
-hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
-hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#000000
-hi Function	ctermfg=117	guifg=#87d7ff
-hi Method	guifg=#87d7ff gui=italic
-hi Identifier	ctermfg=86	cterm=NONE	guifg=#5fffd7	gui=NONE
-hi Ignore       ctermfg=242     cterm=NONE      guifg=#6c6c6c   gui=NONE
-hi Include	ctermfg=219	cterm=NONE	guifg=#ffafff	gui=NONE
-hi LineNr	ctermfg=16	ctermbg=240	guifg=Black	guibg=#585858
-hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
-hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi NonText	ctermfg=21	guifg=#0000ff	term=NONE	gui=NONE
-hi Number	ctermfg=223	guifg=#ffd7af
-hi link Float Number
 hi Normal	ctermfg=253	ctermbg=16	guifg=#f0f0f0	guibg=Black
 hi NormalFloat	ctermfg=253	ctermbg=237	guifg=#dadada	guibg=#3a3a3a
-hi MoreMsg	ctermfg=36	guifg=#00af87
+hi PreProc	ctermfg=207	ctermbg=NONE	guifg=#f8961e
+hi Comment	ctermfg=147	guifg=#5fd75f
+hi Function	ctermfg=117	guifg=#f3722c
+hi String	ctermfg=229	guifg=#ffffaf
+hi Statement	ctermfg=226	guifg=#e5dfdf	cterm=NONE	gui=NONE
+hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#f8961e	cterm=NONE	gui=NONE
+hi Operator	ctermfg=208	guifg=#00d7ff
+hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
+
+
+hi GitGutterAdd    guifg=#005b00 ctermfg=2
+hi GitGutterChange guifg=#959500 ctermfg=3
+hi GitGutterDelete guifg=#ff2222 ctermfg=1
+
+hi Boolean	ctermfg=209	guifg=#ff875f gui=bold
+hi Character	ctermfg=223	guifg=#ffd7af
+hi ColorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
+hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=black
+hi Conditional  ctermfg=228     guifg=#ffff87
+hi Constant	ctermfg=194	guifg=#d7ffd7
+hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=Black	guibg=Green	gui=bold
+hi CursorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
+hi CursorLine	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
+hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
+hi DiffAdd	ctermfg=227	ctermbg=22	guifg=#ffff5f	guibg=#005f00
+hi DiffChange	ctermfg=227	ctermbg=58	guifg=#ffff5f	guibg=#5f5f00
+hi DiffDelete	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000
+hi DiffText	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000	cterm=NONE	gui=NONE
+hi Directory	ctermfg=33	guifg=#0087ff
+hi Emphasis	gui=italic
+hi Error	ctermfg=231	cterm=NONE	ctermbg=196	gui=NONE	guifg=White	guibg=Red
+hi Exception	gui=NONE guifg=#eecc00
+hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#000000
+hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
+hi Identifier	ctermfg=86	cterm=NONE	guifg=#5fffd7	gui=NONE
+hi Ignore       ctermfg=242     cterm=NONE      guifg=#6c6c6c   gui=NONE
+hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
+hi Include	ctermfg=219	cterm=NONE	guifg=#ffafff	gui=NONE
+hi Keyword      ctermfg=193     guifg=#d7ffaf
+hi Label        ctermfg=191     guifg=#d7ff5f
+hi LineNr	ctermfg=16	ctermbg=240	guifg=Black	guibg=#585858
+hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
+hi Method	guifg=#87d7ff gui=italic
 hi ModeMsg	ctermfg=253	guifg=#dadada
-hi Operator	ctermfg=208	guifg=#ff8700
+hi MoreMsg	ctermfg=36	guifg=#00af87
+hi NonText	ctermfg=21	guifg=#0000ff	term=NONE	gui=NONE
+hi Number	ctermfg=223	guifg=#ffd7af
 hi Pmenu	ctermfg=249	ctermbg=235	guifg=#b2b2b2	guibg=#262626
-hi PmenuSel	ctermfg=255	ctermbg=237	guifg=#eeeeee	guibg=#3a3a3a
 hi PmenuSbar	ctermbg=240	guibg=#585858
+hi PmenuSel	ctermfg=255	ctermbg=237	guifg=#eeeeee	guibg=#3a3a3a
 hi PmenuThumb	ctermbg=243	guibg=#767676
-hi PreProc	ctermfg=207	ctermbg=NONE	guifg=#ff5fff
 hi Question	ctermfg=115	guifg=#87d7af
 hi QuickFixLine	ctermfg=231	ctermbg=23	guifg=white	guibg=#005f5f
 hi Quote	guifg=#ffffc0
+hi Repeat       ctermfg=192     guifg=#d7ff87
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi SignColumn	ctermfg=227	ctermbg=240	guifg=#ffff5f	guibg=#000000
 hi Special	ctermfg=221	guifg=#ffd75f
-hi link Delimiter Special
 hi SpecialKey	ctermfg=86	guifg=#00ffff
+hi Strong	gui=bold
+hi link Delimiter Special
+hi link Float Number
 
 if has('nvim') || has('gui_running')
     " Add to your ~/tmux.conf
@@ -86,18 +94,14 @@ else
     hi SpellCap		ctermfg=33	ctermbg=NONE	cterm=underline	guifg=#0087ff	gui=underline
 endif
 
-hi Statement	ctermfg=226	guifg=yellow	cterm=NONE	gui=NONE
 hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=NONE	gui=NONE
 hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=NONE	gui=NONE
 hi VertSplit	ctermfg=240	ctermbg=240	guifg=#585858	guibg=#585858	cterm=NONE	gui=NONE
 hi TabLineSel	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=NONE	gui=NONE
 hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=NONE	gui=NONE
 hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=NONE	gui=NONE
-hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#ffff00	cterm=NONE	gui=NONE
 hi StorageClass	ctermfg=113	guifg=#87d75f	gui=NONE
-hi String	ctermfg=229	guifg=#ffffaf
 hi Structure	ctermfg=79	guifg=#5fd7af	gui=NONE
-hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
 hi Type		ctermfg=77	guifg=#5fd75f	gui=NONE
 hi Underlined	ctermfg=111	guifg=#87afff	cterm=underline	gui=underline
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a

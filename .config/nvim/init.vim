@@ -95,6 +95,9 @@ set scrolloff=4
 " system clipboard
 set clipboard+=unnamedplus
 
+" disable node provider
+let g:loaded_node_provider = 0
+
 " foldtext
 set foldtext=foldtext()
 
@@ -165,5 +168,20 @@ set expandtab
 set shiftwidth=2 
 set smarttab
 
-" LSP
+" --- KEYMAPS
 
+" F7 for Copy & Paste to & from system
+" Copy
+vmap <F7> "+ygv"zy`>
+" Paste
+nmap <F7> "zgP
+" Paste after normal cursor
+nmap <S-F7> "zgp
+imap <F7> <C-r><C-o>z
+" Paste over visual selection)
+vmap <C-F7> "zp`]
+cmap <F7> <C-r><C-o>z
+
+"SET F1 to Esc
+map <F1> <Esc>
+imap <F1> <Esc>
