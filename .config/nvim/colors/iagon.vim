@@ -25,13 +25,20 @@ hi Statement	ctermfg=226	guifg=#e5dfdf	cterm=NONE	gui=NONE
 hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#f8961e	cterm=NONE	gui=NONE
 hi Operator	ctermfg=208	guifg=#00d7ff
 hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
+hi Boolean	ctermfg=209	guifg=#ffd7af gui=bold
 
+syn keyword rTodoKeyw BUG FIX NOTE TODO TEST CHECK contained
 
 hi GitGutterAdd    guifg=#005b00 ctermfg=2
 hi GitGutterChange guifg=#959500 ctermfg=3
 hi GitGutterDelete guifg=#ff2222 ctermfg=1
 
-hi Boolean	ctermfg=209	guifg=#ff875f gui=bold
+" SET for browser()
+hi def link rbrowser Error
+syn match rbrowser "browser()"
+
+" ---
+
 hi Character	ctermfg=223	guifg=#ffd7af
 hi ColorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
 hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=black
