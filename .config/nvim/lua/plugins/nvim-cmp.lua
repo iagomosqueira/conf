@@ -51,3 +51,7 @@ cmp.setup.cmdline(':', {
   require'lspconfig'.r_language_server.setup{
     capabilities = capabilities
   }
+  require'lspconfig'.r_language_server.setup{
+        handlers = {['textDocument/publishDiagnostics'] = function(...) end  }
+  }
+

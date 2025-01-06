@@ -23,7 +23,7 @@ hi Function	ctermfg=117	guifg=#f3722c
 hi String	ctermfg=229	guifg=#ffffaf
 hi Statement	ctermfg=226	guifg=#e5dfdf	cterm=NONE	gui=NONE
 hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#f8961e	cterm=NONE	gui=NONE
-hi Operator	ctermfg=208	guifg=#00d7ff
+hi Operator	ctermfg=208	guifg=yellow
 hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
 hi Boolean	ctermfg=209	guifg=#ffd7af gui=bold
 hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ff80	guibg=#000000

@@ -7,6 +7,6 @@ require("r").setup{
 }
 
 -- keymaps
-vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {})
-vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RDSendSelection", {})
-vim.api.nvim_buf_set_keymap(0, "n", "<BS>", "<Plug>RSendLine", {})
+vim.api.nvim_set_keymap("n", "<Enter>", "<Plug>RDSendLine", {})
+vim.api.nvim_set_keymap("v", "<Enter>", "<Plug>RDSendSelection", {})
+vim.api.nvim_set_keymap("n", "<BS>", "<Plug>RSendLine", {})

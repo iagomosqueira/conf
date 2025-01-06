@@ -42,7 +42,9 @@ Plug 'R-nvim/R.nvim'
 
 " Design
 Plug 'jalvesaq/southernlights'
+Plug 'sainnhe/sonokai'
 Plug 'folke/tokyonight.nvim'
+Plug 'navarasu/onedark.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -73,17 +75,22 @@ noremap <C-Up> <C-W>W
 noremap <C-Down> <C-W>w
 
 " R.nvim
-"nmap <Enter> <Plug>RDSendLine
-"nmap <Space> <Plug>RDSendLine
-"nmap <C-Enter> <Plug>RESendMBlock
 nmap <LocalLeader>r <Plug>RStart
-"vmap <Enter> <Plug>RDSendSelection
 
 
 " --- DISPLAY
 
 set termguicolors
+
 "colorscheme southernlights
+
+"let g:sonokai_style = 'andromeda'
+"let g:sonokai_better_performance = 1
+"
+"colorscheme sonokai
+"let g:lightline = {'colorscheme' : 'sonokai'}
+"hi Normal guibg=black
+
 colorscheme iagon
 
 " Mark line 80
