@@ -1,0 +1,30 @@
+---
+title: ""
+author: Iago MOSQUEIRA (WMR) <iago.mosqueira@wur.nl>
+institute: ""
+header-includes: 
+  - \newcommand{\fig}[2][0.70]{\centering\includegraphics[width=#1\textwidth]{report/#2}}
+fontsize: 10pt
+output:
+  wmrkdown::wur:
+    slide_level: 2
+  binb::metropolis:
+    latex_engine: pdflatex
+tags:
+---
+
+## 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+:::
+
+::::
+
+##
+
+\fig[0.65]{}

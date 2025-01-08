@@ -50,9 +50,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'junegunn/goyo.vim'
+Plug 'patstockwell/vim-monokai-tasty'
 
-" Make
+" Tools
 Plug 'neomake/neomake'
+Plug 'cvigilv/esqueleto.nvim'
 
 call plug#end()
 
@@ -189,6 +191,10 @@ imap <F7> <C-r><C-o>z
 vmap <C-F7> "zp`]
 cmap <F7> <C-r><C-o>z
 
-"SET F1 to Esc
+" SET F1 to Esc
 map <F1> <Esc>
 imap <F1> <Esc>
+
+" F11 to set spell
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>
