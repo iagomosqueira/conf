@@ -194,7 +194,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Backlog' '@OLD' 'Library' 'Projects' 'System')
+folders=('Active' 'Backlog' '@OLD' 'Library' 'Projects' 'Work')
 
 # polbo
 function polbo {

@@ -27,8 +27,9 @@ hi Operator	ctermfg=208	guifg=yellow
 hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
 hi Boolean	ctermfg=209	guifg=#ffd7af gui=bold
 hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ff80	guibg=#000000
-hi Folded	ctermfg=86	ctermbg=240	guifg=#00ff80	guibg=#585858
+hi Folded	ctermfg=86	ctermbg=240	guifg=#4cac4c	guibg=#252e30
 hi Repeat       ctermfg=192     guifg=#f9ab4a
+hi Type		ctermfg=77	guifg=#5fd75f	gui=NONE
 
 syn keyword rTodoKeyw BUG FIX NOTE TODO TEST CHECK contained
 
@@ -109,7 +110,6 @@ hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=NONE	gui=NONE
 hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=NONE	gui=NONE
 hi StorageClass	ctermfg=113	guifg=#87d75f	gui=NONE
 hi Structure	ctermfg=79	guifg=#5fd7af	gui=NONE
-hi Type		ctermfg=77	guifg=#5fd75f	gui=NONE
 hi Underlined	ctermfg=111	guifg=#87afff	cterm=underline	gui=underline
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
 hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
