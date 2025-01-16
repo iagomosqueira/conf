@@ -61,12 +61,27 @@ call plug#end()
 " LOAD plugins conf
 lua require("plugins")
 
-" --- MAPPINGS
+" --- KEYMAPS
 
-"move between windows
-noremap <C-Up> <C-W>W
-noremap <C-Down> <C-W>w
+" F7 for Copy & Paste to & from system
+" Copy
+vmap <F7> "+ygv"zy`>
+" Paste
+nmap <F7> "zgP
+" Paste after normal cursor
+nmap <S-F7> "zgp
+imap <F7> <C-r><C-o>z
+" Paste over visual selection)
+vmap <C-F7> "zp`]
+cmap <F7> <C-r><C-o>z
 
+" SET F1 to Esc
+map <F1> <Esc>
+imap <F1> <Esc>
+
+" F11 to set spell
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>
 " save
 nnoremap ww :w<CR>
 nnoremap qq :q<CR>
@@ -76,9 +91,14 @@ nnoremap wq :wq<CR>
 noremap <C-Up> <C-W>W
 noremap <C-Down> <C-W>w
 
+" move by screen line
+imap <silent> <Down> <C-o>gj
+imap <silent> <Up> <C-o>gk
+nmap <silent> <Down> gj
+nmap <silent> <Up> gk
+
 " R.nvim
 nmap <LocalLeader>r <Plug>RStart
-
 
 " --- DISPLAY
 
@@ -111,9 +131,9 @@ let g:loaded_node_provider = 0
 set foldtext=foldtext()
 
 "foldmethod
+" set foldmethod=marker
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-set foldmethod=marker
 
 " Add a left margin
 set foldcolumn=2
@@ -149,7 +169,6 @@ let g:airline_section_c = airline#section#create(['%{CondensedPath()}'])
 " allow backspacing over everything in insert mode
 set bs=start,indent,eol
 
-
 " --- BEHAVIOUR
 
 " keep no backup file
@@ -177,24 +196,3 @@ set expandtab
 set shiftwidth=2 
 set smarttab
 
-" --- KEYMAPS
-
-" F7 for Copy & Paste to & from system
-" Copy
-vmap <F7> "+ygv"zy`>
-" Paste
-nmap <F7> "zgP
-" Paste after normal cursor
-nmap <S-F7> "zgp
-imap <F7> <C-r><C-o>z
-" Paste over visual selection)
-vmap <C-F7> "zp`]
-cmap <F7> <C-r><C-o>z
-
-" SET F1 to Esc
-map <F1> <Esc>
-imap <F1> <Esc>
-
-" F11 to set spell
-nnoremap <silent> <F11> :set spell!<cr>
-inoremap <silent> <F11> <C-O>:set spell!<cr>

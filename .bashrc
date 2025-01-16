@@ -173,11 +173,6 @@ eval "$(register-python-argcomplete pipx)"
 # cheat
 export CHEATCOLORS=true
 
-# todo.txt
-export TODOTXT_DEFAULT_ACTION=ls
-export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
-alias t='todo.sh -d ~/.todo/config'
-
 # vpnwur
 function vpnwur {
   sudo openfortivpn mol02.wur.nl:443 -u mosqu003 -p "*y5'STp&u7r'LWR" --trusted-cert=c715f6a354a31a9d3ce44f0dbc81bc88ff6d61c04b1e61fc3a421fbcf40945b8
@@ -327,3 +322,10 @@ function getpdfs {
 
 # Created by `pipx` on 2024-12-23 12:08:31
 export PATH="$PATH:/home/mosqu003/.local/bin"
+
+# world time
+function tz() {
+  for tz in Europe/Amsterdam Europe/London Australia/Hobart Asia/Tokyo US/Pacific; do
+    echo -e "$tz:\t\t$(TZ=$tz date -R)"
+  done
+}
