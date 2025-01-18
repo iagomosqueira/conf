@@ -1,8 +1,8 @@
 
-require("nvim-treesitter").setup{
+require("nvim-treesitter.configs").setup{
 
-  ensure_installed = { "c", "cpp", "lua", "vim", "help", "latex", "markdown",
-    "markdown_inline", "bash", "r"},
+  ensure_installed = { "c", "cpp", "lua", "vim", "latex", "markdown",
+    "markdown_inline", "bash", "r", "yaml"},
  
   highlight = {enable = true},
   
@@ -14,7 +14,7 @@ require("nvim-treesitter").setup{
       init_selection = "<C-space>",
       node_incremental = "<C-space>",
       scope_incremental = false,
-      node_decremental = "<bs>",
+      node_decremental = "<C-BS>",
       },
     },
 }

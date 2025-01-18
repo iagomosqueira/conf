@@ -4,10 +4,12 @@ require("r").setup{
   pdfviewer = "xdg-open",
   objbr_w = 16,
   setwd = "file",
-  external_term = "alacritty --config-file ~/.config/alacritty/R.yml -e"
+  external_term = "alacritty --config-file ~/.config/alacritty/R.yml -e",
+  hook = {
+    on_filetype = function()
+      vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {noremap = true})
+      vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {noremap = true})
+      vim.api.nvim_buf_set_keymap(0, "n", "<BS>", "<Plug>RSendLine", {noremap = true})
+    end,
+  },
 }
-
--- keymaps
-vim.api.nvim_set_keymap("n", "<Enter>", "<Plug>RDSendLine", {noremap = true})
-vim.api.nvim_set_keymap("v", "<Enter>", "<Plug>RDSendSelection", {noremap = true})
-vim.api.nvim_set_keymap("n", "<BS>", "<Plug>RSendLine", {noremap = true})

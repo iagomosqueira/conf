@@ -21,7 +21,7 @@ Plug 'epwalsh/obsidian.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 " dependencies
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'nvim-telescope/telescope.nvim'
 
 " LSP
@@ -131,9 +131,9 @@ let g:loaded_node_provider = 0
 set foldtext=foldtext()
 
 "foldmethod
-" set foldmethod=marker
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldmethod=marker
 
 " Add a left margin
 set foldcolumn=2
