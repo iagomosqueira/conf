@@ -38,11 +38,10 @@
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path', option = {  trailing_slash = true } }
-  }, {
-    { name = 'cmdline', option = {  treat_trailing_slash = false } }
-  }),
+  sources = cmp.config.sources(
+    {{name = 'cmdline', option = {  treat_trailing_slash = false }}} ,
+    {{ name = 'path', option = {  trailing_slash = true }}}
+  ),
     matching = { disallow_symbol_nonprefix_matching = false }
 })
 

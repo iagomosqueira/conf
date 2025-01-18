@@ -19,6 +19,8 @@ Plug 'tpope/vim-surround'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'epwalsh/obsidian.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+Plug 'jc-doyle/cmp-pandoc-references'
+Plug 'quarto-dev/quarto-nvim'
 
 " dependencies
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
