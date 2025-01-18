@@ -440,6 +440,7 @@ key_bindings:
   # (Windows/Linux only)
   - { key: V,        mods: Alt,       action: Paste            }
   - { key: C,        mods: Alt,       action: Copy             }
+  - { key: Minus,       mods: Alt,       chars: " <- "            }
   #- { key: Insert,   mods: Shift,         action: PasteSelection   }
   #- { key: Key0,     mods: Control,       action: ResetFontSize    }
   #- { key: Equals,   mods: Control,       action: IncreaseFontSize }
