@@ -21,6 +21,7 @@ Plug 'epwalsh/obsidian.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'jc-doyle/cmp-pandoc-references'
 Plug 'quarto-dev/quarto-nvim'
+Plug 'jc-doyle/cmp-pandoc-references'
 
 " dependencies
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
@@ -115,7 +116,7 @@ set termguicolors
 "let g:lightline = {'colorscheme' : 'sonokai'}
 "hi Normal guibg=black
 
-colorscheme iagon
+colorscheme iago
 
 " Mark line 80
 set colorcolumn=96

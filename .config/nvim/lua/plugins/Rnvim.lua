@@ -7,6 +7,7 @@ require("r").setup{
   external_term = "alacritty --config-file ~/.config/alacritty/R.yml -e",
   hook = {
     on_filetype = function()
+      vim.opt.foldmethod = "marker"
       vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {noremap = true})
       vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {noremap = true})
       vim.api.nvim_buf_set_keymap(0, "n", "<BS>", "<Plug>RSendLine", {noremap = true})
