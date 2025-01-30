@@ -199,3 +199,21 @@ set expandtab
 set shiftwidth=2 
 set smarttab
 
+" --- PLUGINS
+
+" Neomake
+nnoremap <F12> :w\|:Neomake!<CR>
+" Rmd maker
+let g:neomake_rmarkdown_render_maker = {
+  \ 'exe': 'R',
+  \ 'args': ['--slave', '--no-restore', '--no-save', '-e rmarkdown::render("%t")'],
+  \ 'append_file': 0,
+  \ 'errorformat': 
+    \ '%W%f:%l:%c: style: %m,' .
+    \ '%W%f:%l:%c: warning: %m,' .
+    \ '%E%f:%l:%c: error: %m,'
+  \ }
+
+let g:neomake_rmarkdown_enabled_makers = ['render']
+
+

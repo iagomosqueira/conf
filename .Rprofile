@@ -205,18 +205,17 @@ ggplot2::theme_set(.my_theme)
 } # }}}
 
 # DEFAULT progressr handler
-
-#if (interactive() && requireNamespace("progressr", quietly = TRUE)) {
+if (interactive() && requireNamespace("progressr", quietly = TRUE)) {
   ## Enable global progression updates
-#  if (getRversion() >= "4.0.0") progressr::handlers(global = TRUE)
+  if (getRversion() >= "4.0.0") progressr::handlers(global = TRUE)
  
   ## In RStudio Console, or not?
-#  if (Sys.getenv("RSTUDIO") == "1" && !nzchar(Sys.getenv("RSTUDIO_TERM"))) {
-#    options(progressr.handlers = progressr::handler_rstudio)
-#  } else {
-#    options(progressr.handlers = progressr::handler_progress)
-#  }
-#}
+  if (Sys.getenv("RSTUDIO") == "1" && !nzchar(Sys.getenv("RSTUDIO_TERM"))) {
+    options(progressr.handlers = progressr::handler_rstudio)
+  } else {
+    options(progressr.handlers = progressr::handler_progress)
+  }
+}
  
 # better error traceback
 # https://renkun.me/2020/03/31/a-simple-way-to-show-stack-trace-on-error-in-r/
