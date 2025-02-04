@@ -5,7 +5,7 @@ require("plugins.esqueleto")
 require("plugins.nvim-cmp")
 require("plugins.nvim-treesitter")
 require("plugins.obsidian-nvim")
-
+require("plugins.outline")
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()

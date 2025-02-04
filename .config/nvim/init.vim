@@ -18,10 +18,12 @@ Plug 'tpope/vim-surround'
 " obsidian & markdown
 Plug 'nvim-lua/plenary.nvim'
 Plug 'epwalsh/obsidian.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'jc-doyle/cmp-pandoc-references'
 Plug 'quarto-dev/quarto-nvim'
 Plug 'jc-doyle/cmp-pandoc-references'
+Plug 'AntonVanAssche/md-headers.nvim'
+Plug 'hedyhli/outline.nvim'
+Plug 'epheien/outline-treesitter-provider.nvim'
 
 " dependencies
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
@@ -102,6 +104,10 @@ nmap <silent> <Up> gk
 
 " R.nvim
 nmap <LocalLeader>r <Plug>RStart
+
+" md-headers
+nnoremap <LocalLeader>h :lua require('md-headers').markdown_headers(false)<CR>
+
 
 " --- DISPLAY
 

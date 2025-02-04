@@ -175,7 +175,7 @@ export CHEATCOLORS=true
 
 # vpnwur
 function vpnwur {
-  sudo openfortivpn mol02.wur.nl:443 -u mosqu003 -p "*y5'STp&u7r'LWR" --trusted-cert=c715f6a354a31a9d3ce44f0dbc81bc88ff6d61c04b1e61fc3a421fbcf40945b8
+  sudo openfortivpn mol02.wur.nl:443 -u mosqu003 -p 'Y9h]>4jam"WRQza' --trusted-cert=c715f6a354a31a9d3ce44f0dbc81bc88ff6d61c04b1e61fc3a421fbcf40945b8
 }
 
 function vpnpedro {
@@ -189,7 +189,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Backlog' '@OLD' 'Library' 'Projects' 'Work')
+folders=('Active' 'Backlog' 'Library' 'Projects' 'Work')
 
 # polbo
 function polbo {
