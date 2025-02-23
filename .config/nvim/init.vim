@@ -56,6 +56,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'junegunn/goyo.vim'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'folke/todo-comments.nvim'
 
 " Tools
 Plug 'neomake/neomake'
