@@ -242,6 +242,15 @@ for folder in ${folders[@]};
   done
 }
 
+# vieira
+function vieira {
+for folder in ${folders[@]};
+  do
+    echo "$folder"
+    rsync -ravz --delete --progress $folder/ /media/mosqu003/Vieira/mosqu003/$folder
+  done
+}
+
 # kraken
 function kraken {
 for folder in ${folders[@]};

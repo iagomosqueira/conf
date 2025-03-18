@@ -7,6 +7,7 @@ require("plugins.nvim-treesitter")
 require("plugins.obsidian-nvim")
 require("plugins.outline")
 require("plugins.todo-comments")
+require("plugins.nvim-lspconfig")
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
