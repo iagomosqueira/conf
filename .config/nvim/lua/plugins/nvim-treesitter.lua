@@ -47,4 +47,3 @@ parser_config.stan = {
 }
 
 vim.treesitter.language.register('stan', 'stan')
-

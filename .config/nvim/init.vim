@@ -60,6 +60,7 @@ Plug 'folke/todo-comments.nvim'
 
 " Tools
 Plug 'neomake/neomake'
+Plug 'tpope/vim-dispatch'
 Plug 'cvigilv/esqueleto.nvim'
 
 call plug#end()
@@ -141,8 +142,8 @@ let g:loaded_node_provider = 0
 set foldtext=foldtext()
 
 "foldmethod
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
 set foldmethod=marker
 
 " Add a left margin

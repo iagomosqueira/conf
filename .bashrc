@@ -189,7 +189,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Backlog' 'Library' 'Projects' 'Work')
+folders=('Active' 'Backlog' 'Bin' 'Desktop' 'Learn' 'Library' 'Projects' 'Work')
 
 # polbo
 function polbo {
@@ -247,7 +247,7 @@ function vieira {
 for folder in ${folders[@]};
   do
     echo "$folder"
-    rsync -ravz --delete --progress $folder/ /media/mosqu003/Vieira/mosqu003/$folder
+    rsync -ravz --delete --progress $folder/ /media/mosqu003/Vieira/$folder
   done
 }
 
