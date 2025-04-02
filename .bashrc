@@ -191,7 +191,7 @@ function syncbruce {
 
 folders=('Active' 'Backlog' 'Bin' 'Desktop' 'Learn' 'Library' 'Projects' 'Work')
 
-# polbo
+# polbo - backup to local NAS
 function polbo {
 for folder in ${folders[@]};
   do
@@ -206,31 +206,13 @@ for folder in ${folders[@]};
 
 }
 
-# polboi
+# polboi - backup to NAS from away
 function polboi {
 for folder in ${folders[@]};
   do
     echo "$folder"
     rsync -ravz --progress --delete -e 'ssh -p 49153' $folder/ mosqueira.synology.me:$folder
   done
-}
-
-# polboa
-function polboa {
-rsync -ravz --progress --delete -e 'ssh -p 49153' ~/Active/ mosqueira.synology.me:Active
-}
-
-# polbo2kraken
-function polbo2kraken {
-    rsync -ravz --progress --delete -e 'ssh -p 49153' mosqueira.synology.me:/var/services/homes/mosqu003/ /media/mosqu003/Kraken/mosqu003
-    rsync -ravz --progress --delete -e 'ssh -p 49153' mosqueira.synology.me:/var/services/homes/anaga/ /media/mosqu003/Kraken/anaga
-
-}
-
-# polbo2choco
-function polbo2choco {
-    rsync -ravz --progress --delete -e 'ssh -p 49153' mosqueira.synology.me:/var/services/homes/mosqu003/ /media/mosqu003/Choco/mosqu003
-    rsync -ravz --progress --delete -e 'ssh -p 49153' mosqueira.synology.me:/var/services/homes/anaga/ /media/mosqu003/Choco/anaga
 }
 
 # choco
@@ -251,15 +233,6 @@ for folder in ${folders[@]};
   done
 }
 
-# kraken
-function kraken {
-for folder in ${folders[@]};
-  do
-    echo "$folder"
-    rsync -ravz --delete --progress $folder/ /media/mosqu003/Kraken/mosqu003/$folder
-  done
-}
-
 # onedrive
 function onedrive {
 for folder in ${folders[@]};
@@ -270,18 +243,9 @@ for folder in ${folders[@]};
   done
 }
 
-# sonedrive
-function sonedrive {
-for folder in ${folders[@]};
-  do
-    echo "$folder"
-    rsync -ravz --progress --delete --cvs-exclude -e 'ssh -p 4156' $HOME/$folder/  ~/Cloud/OneDrive/Home/$folder
-  done
-}
-
 # function borgmosqu003
 function borgmosqu003 {
-borg create --exclude-from /home/mosqu003/.borg.exclude --list /media/mosqu003/Kraken/Borg/mosqu003::archive-{user}-{now} ~/.
+borg create --exclude-from /home/mosqu003/.borg.exclude --list /media/mosqu003/Pota/mosqu003/Borg/mosqu003::archive-{user}-{now} ~/.
 }
 
 # function today
