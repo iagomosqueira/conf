@@ -1,3 +1,5 @@
+require("telescope").setup()
+
 require("plugins.Rnvim")
 require("plugins.cmp-pandoc-references")
 require("plugins.cmp-r")
@@ -8,6 +10,7 @@ require("plugins.obsidian-nvim")
 require("plugins.outline")
 require("plugins.todo-comments")
 require("plugins.nvim-lspconfig")
+-- require("plugins.copilot")
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
@@ -19,3 +22,4 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end
   end,
 })
+

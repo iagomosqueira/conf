@@ -104,7 +104,7 @@ function R45 {
 # R 4.4
 function R44 {
   export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.4/"
-  export R_VERSION="442"
+  export R_VERSION="443"
   ln -f -s $HOME/R/R$R_VERSION/bin/R $HOME/Bin/R
   ln -f -s $HOME/R/R$R_VERSION/bin/Rscript $HOME/Bin/Rscript
   }
@@ -302,3 +302,7 @@ function tz() {
     echo -e "$tz:\t\t$(TZ=$tz date -R)"
   done
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

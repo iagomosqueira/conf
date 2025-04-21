@@ -14,6 +14,8 @@ call plug#begin()
 " Basic
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+" Plug 'zbirenbaum/copilot.lua'
+Plug 'github/copilot.vim'
 
 " obsidian & markdown
 Plug 'nvim-lua/plenary.nvim'
@@ -87,8 +89,10 @@ map <F1> <Esc>
 imap <F1> <Esc>
 
 " F11 to set spell
+autocmd FileType text,markdown,rmarkdown setlocal spell
 nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
+
 " save
 nnoremap ww :w<CR>
 nnoremap qq :q<CR>
@@ -137,14 +141,17 @@ set clipboard+=unnamedplus
 
 " disable node provider
 let g:loaded_node_provider = 0
+let g:node_host_prog = '~/.nvm/versions/node/v23.11.0/lib/node_modules'
+let g:copilot_node_command = '~/.nvm/versions/node/v23.11.0/bin/node'
+let g:copilot_workspace_folders = ["~/Projects/FLR/code"]
 
 " foldtext
 set foldtext=foldtext()
 
 "foldmethod
-"set foldmethod=expr
-"set foldexpr=nvim_treesitter#foldexpr()
-set foldmethod=marker
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+"set foldmethod=marker
 
 " Add a left margin
 set foldcolumn=2
@@ -224,4 +231,5 @@ let g:neomake_rmarkdown_render_maker = {
 
 let g:neomake_rmarkdown_enabled_makers = ['render']
 
-
+" SET foldmethod for R
+autocmd Filetype r setlocal foldmethod=marker
