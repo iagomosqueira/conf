@@ -22,13 +22,17 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'epwalsh/obsidian.nvim'
 Plug 'jc-doyle/cmp-pandoc-references'
 Plug 'quarto-dev/quarto-nvim'
+Plug 'jmbuhr/otter.nvim'
 Plug 'jc-doyle/cmp-pandoc-references'
 Plug 'AntonVanAssche/md-headers.nvim'
 Plug 'hedyhli/outline.nvim'
 Plug 'epheien/outline-treesitter-provider.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+Plug 'bullets-vim/bullets.vim'
 
 " dependencies
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-telescope/telescope.nvim'
 
 " LSP
@@ -151,7 +155,6 @@ set foldtext=foldtext()
 "foldmethod
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-"set foldmethod=marker
 
 " Add a left margin
 set foldcolumn=2
@@ -233,3 +236,14 @@ let g:neomake_rmarkdown_enabled_makers = ['render']
 
 " SET foldmethod for R
 autocmd Filetype r setlocal foldmethod=marker
+
+" [diagnostic signs disappear when entering insert mode #26078](https://github.com/neovim/neovim/issues/26078)
+lua vim.diagnostic.config({virtual_text={format=function(d) return "" end}, signs=true})
+
+function OpenMarkdownPreview (url)
+  execute "silent ! firefox --new-window " . a:url
+endfunction
+let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+
+" Enable TSContext
+TSContextEnable

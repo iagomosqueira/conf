@@ -134,7 +134,7 @@ function R41 {
   }
 
 # CURRENT R
-R44
+R45
 
 # pandoc completion
 source $HOME/.pandoc-completion.bash

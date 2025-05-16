@@ -11,3 +11,5 @@ require("copilot").setup {
     "/home/mosqu003/Projects/FLR/code",
   }
 }
+
+vim.cmd(":Copilot disable")
