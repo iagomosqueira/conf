@@ -4,6 +4,7 @@ require('lspconfig').r_language_server.setup {
     languageserver = {
       diagnostics = {
         globals = { "nvim" },
+        update_in_insert = true,
       },
     },
   },

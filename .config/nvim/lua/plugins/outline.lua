@@ -3,7 +3,7 @@ require'outline'.setup {
     priority = { 'markdown', 'treesitter', 'lsp' },
   },
   outline_window = {
-    width = 25,
+    width = 30,
         relative_width = true
   }
 }

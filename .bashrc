@@ -134,7 +134,7 @@ function R41 {
   }
 
 # CURRENT R
-R45
+if [[ $- == *i* ]]; then R45; fi
 
 # pandoc completion
 source $HOME/.pandoc-completion.bash

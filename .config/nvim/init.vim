@@ -14,12 +14,11 @@ call plug#begin()
 " Basic
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-" Plug 'zbirenbaum/copilot.lua'
 Plug 'github/copilot.vim'
 
 " obsidian & markdown
 Plug 'nvim-lua/plenary.nvim'
-Plug 'epwalsh/obsidian.nvim'
+Plug 'obsidian-nvim/obsidian.nvim'
 Plug 'jc-doyle/cmp-pandoc-references'
 Plug 'quarto-dev/quarto-nvim'
 Plug 'jmbuhr/otter.nvim'
@@ -68,6 +67,7 @@ Plug 'folke/todo-comments.nvim'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-dispatch'
 Plug 'cvigilv/esqueleto.nvim'
+Plug 'folke/flash.nvim'
 
 call plug#end()
 
@@ -118,6 +118,8 @@ nmap <LocalLeader>r <Plug>RStart
 " md-headers
 nnoremap <LocalLeader>h :lua require('md-headers').markdown_headers(false)<CR>
 
+" open terminal
+nmap <F8> :!alacritty&<CR><CR>
 
 " --- DISPLAY
 
@@ -143,11 +145,12 @@ set scrolloff=4
 " system clipboard
 set clipboard+=unnamedplus
 
-" disable node provider
+" set local provider
 let g:loaded_node_provider = 0
 let g:node_host_prog = '~/.nvm/versions/node/v23.11.0/lib/node_modules'
 let g:copilot_node_command = '~/.nvm/versions/node/v23.11.0/bin/node'
 let g:copilot_workspace_folders = ["~/Projects/FLR/code"]
+let g:copilot_enabled = v:false
 
 " foldtext
 set foldtext=foldtext()
@@ -221,6 +224,7 @@ set smarttab
 
 " Neomake
 nnoremap <F12> :w\|:Neomake!<CR>
+
 " Rmd maker
 let g:neomake_rmarkdown_render_maker = {
   \ 'exe': 'R',
@@ -240,10 +244,10 @@ autocmd Filetype r setlocal foldmethod=marker
 " [diagnostic signs disappear when entering insert mode #26078](https://github.com/neovim/neovim/issues/26078)
 lua vim.diagnostic.config({virtual_text={format=function(d) return "" end}, signs=true})
 
+" markdown preview
 function OpenMarkdownPreview (url)
   execute "silent ! firefox --new-window " . a:url
 endfunction
+
 let g:mkdp_browserfunc = 'OpenMarkdownPreview'
 
-" Enable TSContext
-TSContextEnable
