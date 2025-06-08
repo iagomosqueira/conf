@@ -7,7 +7,8 @@ Sys.setenv(R_COMPILE_PKGS=3)
 Sys.setenv(R_ENABLE_JIT=3) 
 Sys.setenv('_R_CHECK_SYSTEM_CLOCK_' = 0)
 
-options(Ncpus = 3)
+options(Ncpus = 5)
+Sys.setenv(MAKEFLAGS = paste0("-j", 5))
 
 options(future.rng.onMisuse = "ignore")
 
