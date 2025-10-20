@@ -96,7 +96,7 @@ alias Rscript='$HOME/R/R$R_VERSION/bin/Rscript'
 # R 4.5
 function R45 {
   export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.5/"
-  export R_VERSION="450"
+  export R_VERSION="451"
   ln -f -s $HOME/R/R$R_VERSION/bin/R $HOME/Bin/R
   ln -f -s $HOME/R/R$R_VERSION/bin/Rscript $HOME/Bin/Rscript
   }
@@ -189,7 +189,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Backlog' 'Bin' 'Desktop' 'Learn' 'Library' 'Projects' 'Work')
+folders=('Active' 'Backlog' 'Bin' 'Desktop' 'Inbox' 'Library' 'Projects' 'Study' 'Work')
 
 # polbo - backup to local NAS
 function polbo {
@@ -306,3 +306,8 @@ function tz() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# docker windows
+function windows () {
+  docker run -it --rm --name windows -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/.windows:/storage" --stop-timeout 120 dockurr/windows
+}

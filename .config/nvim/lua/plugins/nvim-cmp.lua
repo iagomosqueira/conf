@@ -62,11 +62,11 @@ cmp.setup({
 })
 
   -- Set up lspconfig.
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  require'lspconfig'.r_language_server.setup{
-    capabilities = capabilities
-  }
-  require'lspconfig'.r_language_server.setup{
-        handlers = {['textDocument/publishDiagnostics'] = function(...) end  }
-  }
+--  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+--  require'lspconfig'.r_language_server.setup{
+--    capabilities = capabilities
+--  }
+--  require'lspconfig'.r_language_server.setup{
+--        handlers = {['textDocument/publishDiagnostics'] = function(...) end  }
+--  }
 

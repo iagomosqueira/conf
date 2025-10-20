@@ -1,4 +1,4 @@
-require('lspconfig').r_language_server.setup {
+vim.lsp.config('r_language_server', {
   cmd = { "R", "--slave", "-e", "languageserver::run()" },
   settings = {
     languageserver = {
@@ -8,4 +8,4 @@ require('lspconfig').r_language_server.setup {
       },
     },
   },
-}
+})

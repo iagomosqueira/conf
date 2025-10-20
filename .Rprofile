@@ -158,6 +158,7 @@ invisible(TRUE)
 .env$setdebug <- function() {
   handlers(global=FALSE)
   plan(sequential)
+  # options(warn=1, error=browser)
 }
 
 .env$viewxl <- function(.data){
@@ -321,3 +322,6 @@ options(nvimcom.verbose = 0)
 
 # lintr
 options(lintr.linter_file = "~/.lintr")
+
+# x11
+grDevices::X11.options(width=9)

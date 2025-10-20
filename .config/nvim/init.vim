@@ -51,10 +51,7 @@ Plug 'R-nvim/cmp-r'
 Plug 'R-nvim/R.nvim'
 
 " Design
-Plug 'jalvesaq/southernlights'
 Plug 'sainnhe/sonokai'
-Plug 'folke/tokyonight.nvim'
-Plug 'navarasu/onedark.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
