@@ -1,6 +1,30 @@
   -- Set up nvim-cmp.
   local cmp = require'cmp'
 
+-- Install nvim-treesitter and set up context checking
+local function is_in_code_context()
+  local ts_utils = require('nvim-treesitter.ts_utils')
+  local node = ts_utils.get_node_at_cursor()
+  
+  if not node then return true end
+  
+  local node_type = node:type()
+  local disabled_contexts = {
+    'comment',
+    'string',
+    'string_content',
+    'template_string',
+  }
+  
+  for _, context in ipairs(disabled_contexts) do
+    if node_type:match(context) then
+      return false
+    end
+  end
+  
+  return true
+end
+
   cmp.setup({
     completion = {
       autocomplete = false
@@ -53,7 +77,7 @@ cmp.setup({
       local context = require 'cmp.config.context'
       -- keep command mode completion enabled when cursor is in a comment
       if vim.api.nvim_get_mode().mode == 'c' then
-        return true
+        return false
       else
         return not context.in_treesitter_capture("comment") 
           and not context.in_syntax_group("Comment")
@@ -61,7 +85,7 @@ cmp.setup({
     end
 })
 
-  -- Set up lspconfig.
+-- Set up lspconfig.
 --  local capabilities = require('cmp_nvim_lsp').default_capabilities()
 --  require'lspconfig'.r_language_server.setup{
 --    capabilities = capabilities

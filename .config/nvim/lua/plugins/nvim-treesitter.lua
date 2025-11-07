@@ -2,7 +2,7 @@
 require("nvim-treesitter.configs").setup{
 
   ensure_installed = { "c", "cpp", "lua", "vim", "latex", "markdown",
-    "markdown_inline", "bash", "r", "yaml"},
+    "markdown_inline", "bash", "r", "rnoweb", "yaml"},
  
   highlight = {enable = true},
   

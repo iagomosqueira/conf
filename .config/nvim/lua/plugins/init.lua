@@ -1,4 +1,5 @@
 require("telescope").setup()
+require("colorizer").setup()
 
 require("plugins.Rnvim")
 require("plugins.cmp-pandoc-references")
@@ -11,6 +12,7 @@ require("plugins.outline")
 require("plugins.todo-comments")
 require("plugins.nvim-lspconfig")
 require("plugins.flash")
+require("plugins.nvim-origami")
 
 -- require("plugins.copilot")
 vim.cmd("silent! Copilot disable")

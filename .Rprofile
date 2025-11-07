@@ -56,6 +56,11 @@ if(interactive() & !.isRStudio) {
   suppressPackageStartupMessages(require(utils))
   suppressPackageStartupMessages(require(data.table))
   suppressPackageStartupMessages(require(TAF))
+  suppressPackageStartupMessages(require(pushoverr))
+
+# pushoverr
+suppressMessages(set_pushover_user(user = "urv8da5946uxpb7ejg9uacptqhcvpt"))
+suppressMessages(set_pushover_app(token = "augvebebgwkss1yq9st8jx4e6p23pe"))
 
   # Invisible environment for functions
   .env <- new.env()
@@ -72,12 +77,14 @@ if(interactive() & !.isRStudio) {
 
   # Load into lost
   .env$lload <- function(file) {
-    return(mget(load(file)))
+    lis <- mget(load(file, envir=(NE. <- new.env()), verbose=FALSE), envir=NE.)
+    print(names(lis))
+    return(lis)
   }
 
   # pushend
   .env$pushend <- function(msg) 
-    pushoverr::pushover(paste(mnasg, Sys.time(), sep= " - "))
+    pushoverr::pushover(paste(msg, Sys.time(), sep= " - "))
 
   # List objects and classes
   .env$lsa <- function() {

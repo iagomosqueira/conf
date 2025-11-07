@@ -31,8 +31,6 @@ hi Folded  guibg=#2E2E2E guifg=lightgreen
 hi Repeat       ctermfg=192     guifg=#f9ab4a
 hi Type		ctermfg=77	guifg=#5fd75f	gui=NONE
 
-" syn keyword rTodoKeyw BUG FIX NOTE TODO TEST CHECK contained
-
 hi GitGutterAdd    guifg=#005b00 ctermfg=2
 hi GitGutterChange guifg=#959500 ctermfg=3
 hi GitGutterDelete guifg=#ff2222 ctermfg=1

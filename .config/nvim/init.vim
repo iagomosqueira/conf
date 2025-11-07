@@ -59,12 +59,14 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'junegunn/goyo.vim'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'folke/todo-comments.nvim'
+Plug 'catgoose/nvim-colorizer.lua'
 
 " Tools
 Plug 'neomake/neomake'
 Plug 'tpope/vim-dispatch'
 Plug 'cvigilv/esqueleto.nvim'
 Plug 'folke/flash.nvim'
+Plug 'chrisgrieser/nvim-origami'
 
 call plug#end()
 
