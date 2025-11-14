@@ -45,6 +45,7 @@ Plug 'hrsh7th/nvim-cmp'
 " vsnip
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'rafamadriz/friendly-snippets'
 
 " R
 Plug 'R-nvim/cmp-r'
@@ -152,7 +153,7 @@ let g:copilot_workspace_folders = ["~/Projects/FLR/code"]
 let g:copilot_enabled = v:false
 
 " foldtext
-set foldtext=foldtext()
+" set foldtext=foldtext()
 
 "foldmethod
 set foldmethod=expr
@@ -249,4 +250,3 @@ function OpenMarkdownPreview (url)
 endfunction
 
 let g:mkdp_browserfunc = 'OpenMarkdownPreview'
-

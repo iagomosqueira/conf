@@ -311,3 +311,6 @@ export NVM_DIR="$HOME/.nvm"
 function windows () {
   docker run -it --rm --name windows -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/.windows:/storage" --stop-timeout 120 dockurr/windows
 }
+
+# rtop
+alias rtop="htop -u mosqu003 -F 'R4'"
