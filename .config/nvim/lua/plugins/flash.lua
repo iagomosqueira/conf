@@ -12,7 +12,12 @@ require('flash').setup{
           enabled = true,
           shade = 9,
         }
+    },
+    modes = {
+      char = {
+        jump_labels = true
     }
+  }
 }
 
 vim.keymap.set({"n","o","x"},"j", function() require("flash").jump() end, {desc="Flash"})

@@ -1,5 +1,5 @@
-  -- Set up nvim-cmp.
-  local cmp = require'cmp'
+-- Set up nvim-cmp.
+local cmp = require'cmp'
 
 -- Install nvim-treesitter and set up context checking
 local function is_in_code_context()
@@ -39,6 +39,7 @@ cmp.setup({
     },
 
     mapping = cmp.mapping.preset.insert({
+      ['<Tab>'] = cmp.mapping.select_next_item(),
       ['<C-n>'] = cmp.mapping.select_next_item(),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -47,6 +48,12 @@ cmp.setup({
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
     }),
+
+    experimental = {
+      ghost_text = {
+        hl_group = 'Ghost'
+      },
+    },
 
     sources = cmp.config.sources({
       { name = "nvim_lsp", group_index = 2 },

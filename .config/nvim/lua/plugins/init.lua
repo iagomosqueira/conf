@@ -11,7 +11,6 @@ require("plugins.obsidian-nvim")
 require("plugins.outline")
 require("plugins.todo-comments")
 require("plugins.nvim-lspconfig")
-require("plugins.flash")
 require("plugins.nvim-origami")
 
 -- require("plugins.copilot")

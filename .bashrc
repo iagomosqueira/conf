@@ -96,7 +96,7 @@ alias Rscript='$HOME/R/R$R_VERSION/bin/Rscript'
 # R 4.5
 function R45 {
   export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.5/"
-  export R_VERSION="451"
+  export R_VERSION="452"
   ln -f -s $HOME/R/R$R_VERSION/bin/R $HOME/Bin/R
   ln -f -s $HOME/R/R$R_VERSION/bin/Rscript $HOME/Bin/Rscript
   }

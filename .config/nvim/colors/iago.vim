@@ -16,6 +16,7 @@ endif
 let colors_name = "iago"
 
 hi Normal	ctermfg=253	ctermbg=16	guifg=#f0f0f0	guibg=Black
+hi Ghost	ctermfg=253	ctermbg=16	guifg=#3a3a3a	guibg=Black
 hi NormalFloat	ctermfg=253	ctermbg=237	guifg=#dadada	guibg=#3a3a3a
 hi PreProc	ctermfg=207	ctermbg=NONE	guifg=#f8961e
 hi Comment	ctermfg=147	guifg=#5fd75f

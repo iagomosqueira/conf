@@ -32,6 +32,7 @@ Plug 'bullets-vim/bullets.vim'
 " dependencies
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-telescope/telescope.nvim'
 
 " LSP
@@ -66,7 +67,6 @@ Plug 'catgoose/nvim-colorizer.lua'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-dispatch'
 Plug 'cvigilv/esqueleto.nvim'
-Plug 'folke/flash.nvim'
 Plug 'chrisgrieser/nvim-origami'
 
 call plug#end()

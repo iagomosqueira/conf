@@ -7,8 +7,8 @@ Sys.setenv(R_COMPILE_PKGS=3)
 Sys.setenv(R_ENABLE_JIT=3) 
 Sys.setenv('_R_CHECK_SYSTEM_CLOCK_' = 0)
 
-options(Ncpus = 5)
-Sys.setenv(MAKEFLAGS = paste0("-j", 5))
+options(Ncpus = 4)
+Sys.setenv(MAKEFLAGS = paste0("-j", 4))
 
 options(future.rng.onMisuse = "ignore")
 
@@ -18,28 +18,24 @@ options(future.rng.onMisuse = "ignore")
 options(repos=structure(c(CRAN="https://cloud.r-project.org/",
   FLR="https://flr.r-universe.dev")))
 
-  # CRAN
-
   pkgs <- c("Rcpp", "devtools", "ggplot2", "data.table", "knitr", "rmarkdown",
-    "testthat", "doParallel", "TMB", "RcppArmadillo", "patchwork", "bookdown",
-    "ropenblas")
+    "testthat", "doParallel", "doFuture", "TMB", "RcppArmadillo", "patchwork", 
+    "bookdown", "ropenblas")
 
   install.packages(pkgs)
 
-  # FLR
+  remotes::install_github(c("r4ss/r4ss", "jalvesaq/colorout",
+    "briandconnelly/pushoverr"))
 
-  install.packages(c("FLCore", "FLFishery", "ggplotFL", "FLasher", "FLBRP",
-    "FLSRTMB", "a4adiags", "bbm", "FLa4a", "FLife", "FLXSA"))
-
-  # GITHUB
-
-  remotes::install_github(c("r4ss/r4ss", "jalvesaq/colorout"))
+  install_github(paste0("flr/", c("FLCore", "FLFishery", "ggplotFL", "FLasher", "FLBRP",
+    "FLSRTMB", "a4adiags", "bbm", "FLa4a", "FLife", "FLXSA")))
 
   remotes::install_github(paste("jabbamodel",
     c("JABBA", "ss3diags"), sep="/"))
   
   remotes::install_github(paste("Henning-Winker",
-    c("JARA", "FLRef", "SPMpriors"), sep="/"))
+    c("JARA", "SPMpriors"), sep="/"))
+
 } # }}}
 
 # Test whether running under RStudio 
