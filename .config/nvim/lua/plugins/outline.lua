@@ -23,5 +23,8 @@ require'outline'.setup {
   symbol_folding = {
 
     autofold_depth = 2,
+  },
+  symbols = {
+    icon_fetcher = function(kind, bufnr, symbol) return kind:sub(1,1) end,
   }
 }

@@ -4,7 +4,7 @@ require("r").setup{
   pdfviewer = "xdg-open",
   objbr_w = 16,
   setwd = "file",
-  external_term = "alacritty --config-file /home/mosqu003/.config/alacritty/R.yml -e",
+  external_term = "alacritty --config-file /home/mosqu003/.config/alacritty/R.toml -e",
   debug = false,
   debug_jump = false,
   hook = {

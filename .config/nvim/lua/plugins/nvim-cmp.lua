@@ -26,6 +26,17 @@ local function is_in_code_context()
 end
 
 cmp.setup({
+  enabled = function()
+    -- Disable in comments and strings
+    if not is_in_code_context() then
+      return false
+    end
+    return true
+  end,
+  -- ... rest of config
+})
+
+cmp.setup({
   snippet = {
   -- REQUIRED - you must specify a snippet engine
     expand = function(args)
@@ -46,7 +57,6 @@ cmp.setup({
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
-
     }),
 
     experimental = {
@@ -93,3 +103,13 @@ cmp.setup({
       end
     end
 })
+
+-- initialize global var to false -> nvim-cmp turned off per default
+vim.g.cmptoggle = false
+
+cmp.setup {
+  enabled = function()
+    return vim.g.cmptoggle
+  end
+}
+vim.keymap.set("n", "<leader>ct", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", { desc = "toggle nvim-cmp" })
