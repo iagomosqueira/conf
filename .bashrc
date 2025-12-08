@@ -75,6 +75,7 @@ export HISTFILESIZE=1000000000
 export HISTCONTROL=erasedups
 export PROMPT_COMMAND='history -a'
 
+
 # default editor
 export EDITOR=neovim
 export CVSEDITOR='neovim -f'
@@ -263,6 +264,7 @@ function conf {
   rsync -avz -R ~/./.ssh ~/Library/Code/conf/
   rsync -avz -R ~/./.config/nemo ~/Library/Code/conf/
   rsync -avz -R ~/./.pubsrc ~/Library/Code/conf/
+  rsync -avz -R ~/./.local/share/cheat
 
   cd ~/Library/Code/conf
   git pull

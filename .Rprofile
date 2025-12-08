@@ -47,6 +47,7 @@ if(interactive() & !.isRStudio) {
     colorout::setOutputColors(stderror = 7, verbose=FALSE)
     colorout::setOutputColors256(stderror = 7, verbose=FALSE)
   suppressMessages(require(devtools))
+  suppressMessages(require(knitr))
   suppressMessages(require(ropenblas))
   suppressMessages(require(rmarkdown))
   suppressPackageStartupMessages(require(utils))
@@ -328,3 +329,10 @@ options(lintr.linter_file = "~/.lintr")
 
 # x11
 grDevices::X11.options(width=9)
+
+#
+print.knit_image_paths <- function(x) {
+  # TODO: Handle multiples figures
+  grid::grid.newpage()
+  grid::grid.raster(png::readPNG(x))
+}

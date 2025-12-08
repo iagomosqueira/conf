@@ -610,6 +610,7 @@ decorations = "Full"
 dynamic_padding = false
 dynamic_title = true
 startup_mode = "maximized"
+title = "R"
 
 [window.padding]
 x = 0
