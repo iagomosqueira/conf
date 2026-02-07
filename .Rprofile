@@ -15,9 +15,6 @@ options(future.rng.onMisuse = "ignore")
 # REBUILD pkg library {{{
 .mysetup <- function(...) {
 
-options(repos=structure(c(CRAN="https://cloud.r-project.org/",
-  FLR="https://flr.r-universe.dev")))
-
   pkgs <- c("Rcpp", "devtools", "ggplot2", "data.table", "knitr", "rmarkdown",
     "testthat", "doParallel", "doFuture", "TMB", "RcppArmadillo", "patchwork", 
     "bookdown", "ropenblas")
@@ -53,11 +50,11 @@ if(interactive() & !.isRStudio) {
   suppressPackageStartupMessages(require(utils))
   suppressPackageStartupMessages(require(data.table))
   suppressPackageStartupMessages(require(TAF))
-  suppressPackageStartupMessages(require(pushoverr))
+#  suppressPackageStartupMessages(require(pushoverr))
 
 # pushoverr
-suppressMessages(set_pushover_user(user = "urv8da5946uxpb7ejg9uacptqhcvpt"))
-suppressMessages(set_pushover_app(token = "augvebebgwkss1yq9st8jx4e6p23pe"))
+#suppressMessages(set_pushover_user(user = "urv8da5946uxpb7ejg9uacptqhcvpt"))
+#suppressMessages(set_pushover_app(token = "augvebebgwkss1yq9st8jx4e6p23pe"))
 
   # Invisible environment for functions
   .env <- new.env()
@@ -160,8 +157,8 @@ invisible(TRUE)
   untrace(method, signature=signature)
 
 .env$setdebug <- function() {
-  handlers(global=FALSE)
-  plan(sequential)
+  progressr::handlers(global=FALSE)
+  future::plan(sequential)
   # options(warn=1, error=browser)
 }
 
@@ -183,6 +180,11 @@ invisible(TRUE)
 
 # Attach env
 suppressMessages(attach(.env))
+
+# load_all(mse)
+loadmse <- function() {
+    devtools::load_all("~/Active/mse_FLR/mse/")
+}
 
 # ECHO getwd
 message("pwd: ", getwd())
@@ -255,7 +257,8 @@ if (interactive()) {
 
 # CRAN
 options(repos=structure(c(CRAN="https://cloud.r-project.org/",
-  FLR="https://flr.r-universe.dev")))
+  FLR="https://flr.r-universe.dev",
+  ICES="https://ices-tools-prod.r-universe.dev")))
 
 # A4
 options(papersize = "a4")

@@ -29,3 +29,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.g.markdown_recommended_style = 0
+
+-- zotcite
+require("zotcite").setup({  
+    hl_cite_key = true,  
+    sort_key = "date",  
+    key_type = "better-bibtex",
+    conceallevel = 2,  
+    filetypes = { "markdown", "pandoc", "rmd", "quarto", "vimwiki" },  
+    python_path = "python3",  
+    pdf_extractor = "pdfnotes.py",  
+    -- Add any other options from doc/zotcite.txt  
+})

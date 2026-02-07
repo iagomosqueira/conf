@@ -19,20 +19,19 @@ Plug 'github/copilot.vim'
 " obsidian & markdown
 Plug 'nvim-lua/plenary.nvim'
 Plug 'obsidian-nvim/obsidian.nvim'
-Plug 'jc-doyle/cmp-pandoc-references'
 Plug 'quarto-dev/quarto-nvim'
 Plug 'jmbuhr/otter.nvim'
 Plug 'jc-doyle/cmp-pandoc-references'
-Plug 'AntonVanAssche/md-headers.nvim'
 Plug 'hedyhli/outline.nvim'
 Plug 'epheien/outline-treesitter-provider.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'bullets-vim/bullets.vim'
+Plug 'jalvesaq/zotcite'
 
 " dependencies
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
-Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master' }
+Plug 'nvim-treesitter/nvim-treesitter-context', { 'branch': 'master' }
+Plug 'nvim-treesitter/nvim-treesitter-textobjects', { 'branch': 'master' }
 Plug 'nvim-telescope/telescope.nvim'
 
 " LSP
@@ -125,15 +124,6 @@ nmap <F8> :!alacritty&<CR><CR>
 
 set termguicolors
 
-"colorscheme southernlights
-
-"let g:sonokai_style = 'andromeda'
-"let g:sonokai_better_performance = 1
-"
-"colorscheme sonokai
-"let g:lightline = {'colorscheme' : 'sonokai'}
-"hi Normal guibg=black
-
 colorscheme iago
 
 " Mark line 80
@@ -152,15 +142,8 @@ let g:copilot_node_command = '~/.nvm/versions/node/v23.11.0/bin/node'
 let g:copilot_workspace_folders = ["~/Projects/FLR/code"]
 let g:copilot_enabled = v:false
 
-" foldtext
-" set foldtext=foldtext()
-
-"foldmethod
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-
 " Add a left margin
-set foldcolumn=2
+set foldcolumn=1
 
 " show status line
 set laststatus=2
@@ -240,6 +223,7 @@ let g:neomake_rmarkdown_enabled_makers = ['render']
 
 " SET foldmethod for R
 autocmd Filetype r setlocal foldmethod=marker
+autocmd Filetype markdown setlocal foldmethod=expr
 
 " [diagnostic signs disappear when entering insert mode #26078](https://github.com/neovim/neovim/issues/26078)
 lua vim.diagnostic.config({virtual_text={format=function(d) return "" end}, signs=true})

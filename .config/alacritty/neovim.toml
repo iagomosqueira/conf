@@ -620,7 +620,7 @@ title = "nvim"
 
 [window.dimensions]
 columns = 92
-lines = 42
+lines = 38
 
 [window.padding]
 x = 2

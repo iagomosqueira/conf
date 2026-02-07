@@ -190,7 +190,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Backlog' 'Bin' 'Desktop' 'Inbox' 'Library' 'Projects' 'Study' 'Work' 'NEW')
+folders=('Active' 'Backlog' 'Bin' 'Done' 'Desktop' 'Inbox' 'Library' 'Projects' 'Study' 'Work' 'NEW')
 
 # polbo - backup to local NAS
 function polbo {
@@ -200,10 +200,10 @@ for folder in ${folders[@]};
     rsync -ravz --progress --delete --cvs-exclude -e 'ssh -p 4156' $HOME/$folder/  mosqu003@192.168.1.90:$folder
   done
 
-  rsync -ravz -e 'ssh -p 4156' --delete .config/alacritty/  mosqu003@192.168.1.90:.config/alacritty
-  rsync -ravz -e 'ssh -p 4156' --delete .config/nvim/  mosqu003@192.168.1.90:.config/nvim
-  rsync -ravz -e 'ssh -p 4156' --delete .bashrc mosqu003@192.168.1.90:bash/.bashrc
-  rsync -ravz -e 'ssh -p 4156' --delete .Rprofile mosqu003@192.168.1.90:bash/.Rprofile
+  rsync -ravz -e 'ssh -p 4156' --delete $HOME/.config/alacritty/  mosqu003@192.168.1.90:.config/alacritty
+  rsync -ravz -e 'ssh -p 4156' --delete $HOME/.config/nvim/  mosqu003@192.168.1.90:.config/nvim
+  rsync -ravz -e 'ssh -p 4156' --delete $HOME/.bashrc mosqu003@192.168.1.90:bash/.bashrc
+  rsync -ravz -e 'ssh -p 4156' --delete $HOME/.Rprofile mosqu003@192.168.1.90:bash/.Rprofile
 
 }
 
@@ -309,8 +309,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# docker windows
-function windows () {
+# docker windocker
+function windocker () {
   docker run -it --rm --name windows -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/.windows:/storage" --stop-timeout 120 dockurr/windows
 }
 

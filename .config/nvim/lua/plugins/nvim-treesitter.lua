@@ -19,7 +19,7 @@ require("nvim-treesitter.configs").setup{
     },
 }
 
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+-- local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
 -- latex
 
@@ -38,12 +38,12 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 -- 
 -- stan
 
-parser_config.stan = {
-  install_info = {
-    url = "~/.config/nvim/parsers/tree-sitter-stan",
-    files = { 'src/parser.c' }, 
-    branch = 'main',
-  },
-}
+-- parser_config.stan = {
+--   install_info = {
+--     url = "~/.config/nvim/parsers/tree-sitter-stan",
+--     files = { 'src/parser.c' }, 
+--     branch = 'main',
+--   },
+-- }
 
-vim.treesitter.language.register('stan', 'stan')
+-- vim.treesitter.language.register('stan', 'stan')

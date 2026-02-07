@@ -2,6 +2,7 @@
 local cmp = require'cmp'
 
 -- Install nvim-treesitter and set up context checking
+
 local function is_in_code_context()
   local ts_utils = require('nvim-treesitter.ts_utils')
   local node = ts_utils.get_node_at_cursor()
@@ -33,7 +34,6 @@ cmp.setup({
     end
     return true
   end,
-  -- ... rest of config
 })
 
 cmp.setup({
@@ -45,18 +45,13 @@ cmp.setup({
     },
     
     window = {
---      completion = cmp.config.window.bordered(),
---      documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
 
     mapping = cmp.mapping.preset.insert({
-      ['<Tab>'] = cmp.mapping.select_next_item(),
-      ['<C-n>'] = cmp.mapping.select_next_item(),
-      ['<C-p>'] = cmp.mapping.select_prev_item(),
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<CR>'] = cmp.mapping.confirm({ select = false }),
+      ['<Tab>'] = cmp.mapping.confirm({ select = false }),
+      ['<CR>'] = cmp.config.disable,
     }),
 
     experimental = {
@@ -67,8 +62,8 @@ cmp.setup({
 
     sources = cmp.config.sources({
       { name = "nvim_lsp", group_index = 2 },
-      { name = 'vsnip' },
       { name = 'buffer' },
+      { name = 'vsnip' },
     })
   })
 
@@ -105,7 +100,7 @@ cmp.setup({
 })
 
 -- initialize global var to false -> nvim-cmp turned off per default
-vim.g.cmptoggle = false
+vim.g.cmptoggle = true
 
 cmp.setup {
   enabled = function()
