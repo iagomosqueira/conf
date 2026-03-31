@@ -1,6 +1,7 @@
 require'todo-comments'.setup {
   keywords = {
     IDEA = { icon = " ", color = "hist" },
+    PLOT = { icon = "󰺒 ", color = "info" },
     TEMP = { icon = " ", color = "info" },
     DEBUG = { icon = "⏲ ", color = "test" },
     CHECK = { icon = " ", color = "test" },
@@ -14,3 +15,4 @@ require'todo-comments'.setup {
     hist = { "#FF00FF" }
   }
 }
+-- ICONS https://www.nerdfonts.com/cheat-sheet

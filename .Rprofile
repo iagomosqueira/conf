@@ -7,8 +7,8 @@ Sys.setenv(R_COMPILE_PKGS=3)
 Sys.setenv(R_ENABLE_JIT=3) 
 Sys.setenv('_R_CHECK_SYSTEM_CLOCK_' = 0)
 
-options(Ncpus = 4)
-Sys.setenv(MAKEFLAGS = paste0("-j", 4))
+options(Ncpus = 3)
+Sys.setenv(MAKEFLAGS = paste0("-j", 3))
 
 options(future.rng.onMisuse = "ignore")
 
@@ -19,13 +19,14 @@ options(future.rng.onMisuse = "ignore")
     "testthat", "doParallel", "doFuture", "TMB", "RcppArmadillo", "patchwork", 
     "bookdown", "ropenblas")
 
-  install.packages(pkgs)
+  install.packages(pkgs, repos="https://cloud.r-project.org/")
 
-  remotes::install_github(c("r4ss/r4ss", "jalvesaq/colorout",
-    "briandconnelly/pushoverr"))
+  remotes::install_github(c("r4ss/r4ss", "jalvesaq/colorout"))
 
-  install_github(paste0("flr/", c("FLCore", "FLFishery", "ggplotFL", "FLasher", "FLBRP",
-    "FLSRTMB", "a4adiags", "bbm", "FLa4a", "FLife", "FLXSA")))
+  install.packages(c("FLCore", "FLFishery", "ggplotFL", "FLasher", "FLBRP",
+    "FLSRTMB", "a4adiags", "FLa4a", "FLife", "FLXSA"),
+    repos=c(CRAN="https://cloud.r-project.org/",
+      FLR="https://flr.r-universe.dev"))
 
   remotes::install_github(paste("jabbamodel",
     c("JABBA", "ss3diags"), sep="/"))
@@ -50,11 +51,10 @@ if(interactive() & !.isRStudio) {
   suppressPackageStartupMessages(require(utils))
   suppressPackageStartupMessages(require(data.table))
   suppressPackageStartupMessages(require(TAF))
-#  suppressPackageStartupMessages(require(pushoverr))
-
 # pushoverr
-#suppressMessages(set_pushover_user(user = "urv8da5946uxpb7ejg9uacptqhcvpt"))
-#suppressMessages(set_pushover_app(token = "augvebebgwkss1yq9st8jx4e6p23pe"))
+# suppressPackageStartupMessages(require(pushoverr))
+# suppressMessages(set_pushover_user(user = "urv8da5946uxpb7ejg9uacptqhcvpt"))
+# suppressMessages(set_pushover_app(token = "augvebebgwkss1yq9st8jx4e6p23pe"))
 
   # Invisible environment for functions
   .env <- new.env()
@@ -331,7 +331,7 @@ options(nvimcom.verbose = 0)
 options(lintr.linter_file = "~/.lintr")
 
 # x11
-grDevices::X11.options(width=9)
+grDevices::X11.options(width=9, height=7, pointsize=11)
 
 #
 print.knit_image_paths <- function(x) {
@@ -339,3 +339,7 @@ print.knit_image_paths <- function(x) {
   grid::grid.newpage()
   grid::grid.raster(png::readPNG(x))
 }
+
+# data.table options
+options(datatable.print.class = TRUE)
+options(datatable.print.trunc.cols = TRUE)

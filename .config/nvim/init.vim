@@ -52,7 +52,6 @@ Plug 'R-nvim/cmp-r'
 Plug 'R-nvim/R.nvim'
 
 " Design
-Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -67,6 +66,8 @@ Plug 'neomake/neomake'
 Plug 'tpope/vim-dispatch'
 Plug 'cvigilv/esqueleto.nvim'
 Plug 'chrisgrieser/nvim-origami'
+
+Plug'esensar/nvim-dev-container'
 
 call plug#end()
 
@@ -118,7 +119,7 @@ nmap <LocalLeader>r <Plug>RStart
 nnoremap <LocalLeader>h :lua require('md-headers').markdown_headers(false)<CR>
 
 " open terminal
-nmap <F8> :!alacritty&<CR><CR>
+nmap <F12> :silent !alacritty&<CR><CR>
 
 " --- DISPLAY
 
@@ -206,7 +207,7 @@ set smarttab
 " --- PLUGINS
 
 " Neomake
-nnoremap <F12> :w\|:Neomake!<CR>
+nnoremap <F10> :w\|:Neomake!<CR>
 
 " Rmd maker
 let g:neomake_rmarkdown_render_maker = {

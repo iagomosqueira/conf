@@ -100,7 +100,14 @@ function R45 {
   export R_VERSION="452"
   ln -f -s $HOME/R/R$R_VERSION/bin/R $HOME/Bin/R
   ln -f -s $HOME/R/R$R_VERSION/bin/Rscript $HOME/Bin/Rscript
-  }
+}
+
+function R45m {
+  export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.5/"
+  export R_VERSION="452m"
+  ln -f -s $HOME/R/R$R_VERSION/bin/R $HOME/Bin/R
+  ln -f -s $HOME/R/R$R_VERSION/bin/Rscript $HOME/Bin/Rscript
+}
 
 # R 4.4
 function R44 {
@@ -190,7 +197,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Backlog' 'Bin' 'Done' 'Desktop' 'Inbox' 'Library' 'Projects' 'Study' 'Work' 'NEW')
+folders=('Active' 'Bin' 'Desktop' 'Done' 'Inbox' 'Library' 'Org' 'Projects')
 
 # polbo - backup to local NAS
 function polbo {
@@ -312,6 +319,11 @@ export NVM_DIR="$HOME/.nvm"
 # docker windocker
 function windocker () {
   docker run -it --rm --name windows -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/.windows:/storage" --stop-timeout 120 dockurr/windows
+}
+
+# docker macdocker
+function macdocker () {
+  docker run -it --rm --name macos -e "VERSION=14" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/macos:/storage" --stop-timeout 120 docker.io/dockurr/macos
 }
 
 # rtop

@@ -100,7 +100,7 @@ cmp.setup({
 })
 
 -- initialize global var to false -> nvim-cmp turned off per default
-vim.g.cmptoggle = true
+vim.g.cmptoggle = false
 
 cmp.setup {
   enabled = function()
