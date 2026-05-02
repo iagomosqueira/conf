@@ -38,6 +38,7 @@ vim.cmd("silent! Copilot disable")
 vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function(args)
     vim.schedule(function()
+      -- r
       if args.match == "r" then
         vim.opt_local.foldmethod = "marker"
       elseif require("nvim-treesitter.parsers").has_parser() then
