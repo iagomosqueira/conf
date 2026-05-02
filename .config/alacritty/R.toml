@@ -1,3 +1,90 @@
+
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x666666"
+blue = "0x7aa6da"
+cyan = "0x54ced6"
+green = "0x9ec400"
+magenta = "0xb77ee0"
+red = "0xff3334"
+white = "0xffffff"
+yellow = "0xe7c547"
+
+[colors.cursor]
+cursor = "0xFF0000"
+text = "0x000000"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x7aa6da"
+cyan = "0x70c0ba"
+green = "0xb9ca4a"
+magenta = "0xc397d8"
+red = "0xd54e53"
+white = "0xeaeaea"
+yellow = "0xe6c547"
+
+[colors.primary]
+# background = "0x000000"
+# foreground = "0xbfff00"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+[font]
+size = 14
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ''',│`|:"' ()[]{}<>'''
+
+[window]
+decorations = "Full"
+dynamic_padding = false
+dynamic_title = true
+startup_mode = "maximized"
+title = "R"
+
+[window.padding]
+x = 0
+y = 0
+
+[keyboard]
+
+[general]
+live_config_reload = true
+working_directory = "None"
+import = ["~/.config/alacritty/themes/warm-burnout-dark.toml"]
+
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"
@@ -529,91 +616,7 @@ chars = """
 """
 key = "NumpadEnter"
 
-[general]
-live_config_reload = true
-working_directory = "None"
-
 [[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
 
-[bell]
-animation = "EaseOutExpo"
-color = "0xffffff"
-duration = 0
-
-[colors]
-draw_bold_text_with_bright_colors = true
-
-[colors.bright]
-black = "0x666666"
-blue = "0x7aa6da"
-cyan = "0x54ced6"
-green = "0x9ec400"
-magenta = "0xb77ee0"
-red = "0xff3334"
-white = "0xffffff"
-yellow = "0xe7c547"
-
-[colors.cursor]
-cursor = "0xFF0000"
-text = "0x000000"
-
-[colors.normal]
-black = "0x000000"
-blue = "0x7aa6da"
-cyan = "0x70c0ba"
-green = "0xb9ca4a"
-magenta = "0xc397d8"
-red = "0xd54e53"
-white = "0xeaeaea"
-yellow = "0xe6c547"
-
-[colors.primary]
-background = "0x000000"
-foreground = "0xbfff00"
-
-[cursor]
-style = "Block"
-unfocused_hollow = true
-
-[debug]
-log_level = "Warn"
-persistent_logging = false
-print_events = false
-render_timer = false
-
-[font]
-size = 14
-
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.offset]
-x = 0
-y = 0
-
-[mouse]
-hide_when_typing = false
-
-[scrolling]
-history = 10000
-multiplier = 3
-
-[selection]
-save_to_clipboard = false
-semantic_escape_chars = ''',│`|:"' ()[]{}<>'''
-
-[window]
-decorations = "Full"
-dynamic_padding = false
-dynamic_title = true
-startup_mode = "maximized"
-title = "R"
-
-[window.padding]
-x = 0
-y = 0
-
-[keyboard]

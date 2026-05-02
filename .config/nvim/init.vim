@@ -60,13 +60,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'folke/todo-comments.nvim'
 Plug 'catgoose/nvim-colorizer.lua'
+Plug 'felipefdl/warm-burnout', { 'rtp': 'nvim' }
 
 " Tools
 Plug 'neomake/neomake'
 Plug 'tpope/vim-dispatch'
 Plug 'cvigilv/esqueleto.nvim'
 Plug 'chrisgrieser/nvim-origami'
-
 Plug'esensar/nvim-dev-container'
 
 call plug#end()
@@ -92,6 +92,9 @@ cmap <F7> <C-r><C-o>z
 map <F1> <Esc>
 imap <F1> <Esc>
 
+" UNMAP q
+nnoremap q <Nop>
+
 " F11 to set spell
 autocmd FileType text,markdown,rmarkdown setlocal spell
 nnoremap <silent> <F11> :set spell!<cr>
@@ -99,8 +102,8 @@ inoremap <silent> <F11> <C-O>:set spell!<cr>
 
 " save
 nnoremap ww :w<CR>
-nnoremap qq :q<CR>
-nnoremap wq :wq<CR>
+nnoremap qa :q<CR>
+nnoremap qq :wq<CR>
 
 " move between windows
 noremap <C-Up> <C-W>W
@@ -125,7 +128,12 @@ nmap <F12> :silent !alacritty&<CR><CR>
 
 set termguicolors
 
-colorscheme iago
+" colorscheme iago
+colorscheme warm-burnout-dark
+" SET Folded to lighter gray
+hi Folded  guibg=#383838 guifg=lightgreen
+" DROP italic from comments
+highlight @comment gui=NONE
 
 " Mark line 80
 set colorcolumn=96

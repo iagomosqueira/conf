@@ -1,13 +1,13 @@
 
 require("nvim-treesitter.configs").setup{
 
-  ensure_installed = { "c", "cpp", "lua", "vim", "latex", "markdown",
+  ensure_installed = { "c", "cpp", "lua", "vim", "markdown", -- "latex",
     "markdown_inline", "bash", "r", "rnoweb", "yaml"},
  
   highlight = {enable = true},
   
   indent = {enable = true},
-  
+
   incremental_selection = {
     enable = true,
     keymaps = {

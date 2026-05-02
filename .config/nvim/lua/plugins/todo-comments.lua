@@ -1,5 +1,6 @@
 require'todo-comments'.setup {
   keywords = {
+    HERE = { icon = " ", color = "warning" },
     IDEA = { icon = " ", color = "hist" },
     PLOT = { icon = "󰺒 ", color = "info" },
     TEMP = { icon = " ", color = "info" },

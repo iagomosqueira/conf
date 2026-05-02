@@ -16,18 +16,37 @@ require("plugins.todo-comments")
 require("plugins.nvim-lspconfig")
 require("plugins.nvim-origami")
 
+-- Override the Tree-sitter migration warning function
+local ts = require("nvim-treesitter.parsers")
+
+-- Save original function
+local original_warn = ts._warn
+
+-- Override
+ts._warn = function(msg, ...)
+  print("Tree-sitter migration detected! Parser path likely causing it:")
+  print(msg)
+  -- Call original warning so behavior is unchanged
+  original_warn(msg, ...)
+end
+
+
 -- require("plugins.copilot")
 vim.cmd("silent! Copilot disable")
 
 -- SET treesitter default foldmethod
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  callback = function()
-    if require("nvim-treesitter.parsers").has_parser() then
-      vim.opt.foldmethod = "expr"
-      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-    else
-      vim.opt.foldmethod = "syntax"
-    end
+  callback = function(args)
+    vim.schedule(function()
+      if args.match == "r" then
+        vim.opt_local.foldmethod = "marker"
+      elseif require("nvim-treesitter.parsers").has_parser() then
+        vim.opt_local.foldmethod = "expr"
+        vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
+      else
+        vim.opt_local.foldmethod = "syntax"
+      end
+    end)
   end,
 })
 
@@ -47,4 +66,3 @@ require("zotcite").setup({
     pdf_extractor = "pdfnotes.py",  
     -- Add any other options from doc/zotcite.txt  
 })
-

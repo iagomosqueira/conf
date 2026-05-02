@@ -3,7 +3,7 @@ require('origami').setup {
     enabled = false
   },
   foldtext = {
-    padding = 2,
+    padding = { width = 2},
   },
 	init = function()
 		vim.opt.foldlevel = 99

@@ -94,17 +94,18 @@ export R_KEEP_PKG_SOURCE=yes
 alias R='$HOME/R/R$R_VERSION/bin/R --no-save'
 alias Rscript='$HOME/R/R$R_VERSION/bin/Rscript'
 
-# R 4.5
-function R45 {
-  export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.5/"
-  export R_VERSION="452"
+# R 4.6
+function R46 {
+  export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.6/"
+  export R_VERSION="460"
   ln -f -s $HOME/R/R$R_VERSION/bin/R $HOME/Bin/R
   ln -f -s $HOME/R/R$R_VERSION/bin/Rscript $HOME/Bin/Rscript
 }
 
-function R45m {
+# R 4.5
+function R45 {
   export R_LIBS_USER="$HOME/R/x86_64-pc-linux-gnu-library/4.5/"
-  export R_VERSION="452m"
+  export R_VERSION="453"
   ln -f -s $HOME/R/R$R_VERSION/bin/R $HOME/Bin/R
   ln -f -s $HOME/R/R$R_VERSION/bin/Rscript $HOME/Bin/Rscript
 }
@@ -197,7 +198,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Bin' 'Desktop' 'Done' 'Inbox' 'Library' 'Org' 'Projects')
+folders=('Active' 'Backlog' 'Bin' 'Desktop' 'Done' 'Inbox' 'Library' 'Org' 'Projects')
 
 # polbo - backup to local NAS
 function polbo {
@@ -278,6 +279,10 @@ function conf {
   git add .
   git cm "`date`"
   git push
+}
+
+function kobo {
+  rsync -avz ~/Library/Books/book/*.epub /media/mosqu003/KOBOeReader/
 }
 
 # DEBUG

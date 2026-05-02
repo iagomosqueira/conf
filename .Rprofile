@@ -258,6 +258,7 @@ if (interactive()) {
 # CRAN
 options(repos=structure(c(CRAN="https://cloud.r-project.org/",
   FLR="https://flr.r-universe.dev",
+  SPRFMO="https://sprfmo.r-universe.dev",
   ICES="https://ices-tools-prod.r-universe.dev")))
 
 # A4
