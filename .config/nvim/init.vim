@@ -134,6 +134,8 @@ colorscheme warm-burnout-dark
 hi Folded  guibg=#383838 guifg=lightgreen
 " DROP italic from comments
 highlight @comment gui=NONE
+" LIGHTER treesitter function header bg
+highlight TreesitterContext guibg=#343434
 
 " Mark line 80
 set colorcolumn=96
