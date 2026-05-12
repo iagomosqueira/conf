@@ -17,14 +17,10 @@ vim.api.nvim_create_user_command("RmdFixImages", function()
   local new = line:gsub(
     'taf%.png%("(.-)%.png"%)',
     function(name)
-      local path = "report/" .. name .. ".png"
-
-      local first = path
-        :gsub("^report/", "")
-        :gsub("/", "-")
+      local filename = name:match("([^/]+)$")
+      local path = (name:find("/") and name or "report/" .. name) .. ".png"
+      local first = filename
         :gsub("_", "")
-        :gsub("%.png$", "")
-
       return "```{r " .. first .. ', fig.cap=""}\n' ..
              'include_graphics("' .. path .. '")\n```'
     end
@@ -33,7 +29,6 @@ vim.api.nvim_create_user_command("RmdFixImages", function()
   local lines = vim.split(new, "\n")
   vim.api.nvim_buf_set_lines(0, row - 1, row, false, lines)
 end, {})
-
 
 vim.keymap.set("n", "<leader>p", "<cmd>RmdFixImages<CR>", {
   buffer = true,

@@ -4,6 +4,7 @@ require'todo-comments'.setup {
     IDEA = { icon = " ", color = "hist" },
     PLOT = { icon = "󰺒 ", color = "info" },
     TEMP = { icon = " ", color = "info" },
+    DONE = { icon = " ", color = "info" },
     DEBUG = { icon = "⏲ ", color = "test" },
     CHECK = { icon = " ", color = "test" },
   },

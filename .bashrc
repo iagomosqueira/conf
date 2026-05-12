@@ -198,7 +198,7 @@ function syncbruce {
 
 # BACKUP
 
-folders=('Active' 'Backlog' 'Bin' 'Desktop' 'Done' 'Inbox' 'Library' 'Org' 'Projects')
+folders=('Active' 'Bin' 'Desktop' 'Inbox' 'Library' 'Org' 'Projects')
 
 # polbo - backup to local NAS
 function polbo {

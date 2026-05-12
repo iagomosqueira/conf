@@ -11,7 +11,7 @@ require'outline'.setup {
   },
   
   outline_window = {
-    width = 26,
+    width = 32,
     relative_width = true,
     focus_on_open = false,
   },

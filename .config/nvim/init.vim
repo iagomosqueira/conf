@@ -103,7 +103,8 @@ inoremap <silent> <F11> <C-O>:set spell!<cr>
 " save
 nnoremap ww :w<CR>
 nnoremap qa :q<CR>
-nnoremap qq :wq<CR>
+
+lua require("keymaps")
 
 " move between windows
 noremap <C-Up> <C-W>W
